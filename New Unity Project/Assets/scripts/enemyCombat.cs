@@ -17,12 +17,19 @@ public class enemyCombat : MonoBehaviour
     {
         if (enemyHealth <= 0)
         {
+            GameObject.Find("Player").GetComponent<playerCombat>().addXP(10);
             Destroy(this.gameObject);
         }
     }
 
     public void getDamage(float damage){
         enemyHealth -= damage;
-        Debug.Log(enemyHealth);
+        Debug.Log("enemyHealth: " + enemyHealth);
+        canAttack += 25;
+        if(canAttack >= 100)
+        {
+            float strength = Random.Range(1, 7);
+            GameObject.Find("Player").GetComponent<playerCombat>().recieveDamage(Mathf.CeilToInt(strength));
+        }
     }
 }
