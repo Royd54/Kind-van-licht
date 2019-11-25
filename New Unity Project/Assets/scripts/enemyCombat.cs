@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class enemyCombat : MonoBehaviour
 {
-    private float enemyHealth = 50f;
+    public float enemyHealth = 50f;
     private float canAttack;
     // Start is called before the first frame update
     void Start()
@@ -26,9 +26,10 @@ public class enemyCombat : MonoBehaviour
         enemyHealth -= damage;
         Debug.Log("enemyHealth: " + enemyHealth);
         canAttack += 25;
-        if(canAttack >= 100)
+        if (canAttack >= 100)
         {
             float strength = Random.Range(1, 7);
+            //anim met courantine
             GameObject.Find("Player").GetComponent<playerCombat>().recieveDamage(Mathf.CeilToInt(strength));
         }
     }
