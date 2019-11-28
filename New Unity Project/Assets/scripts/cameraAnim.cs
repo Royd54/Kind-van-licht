@@ -6,7 +6,7 @@ public class cameraAnim : MonoBehaviour
 {
     public Transform[] views;
     public float transitionSpeed;
-    Transform currentView;
+    public Transform currentView;
 
     void Update()
     {

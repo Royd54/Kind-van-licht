@@ -1,0 +1,835 @@
+fileFormatVersion: 2
+guid: 0af1c9cbfcfdf9342ad2cb2896c00b52
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5517425383450095832
+    second: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_0
+  - first:
+      213: 1631496136568746281
+    second: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_1
+  - first:
+      213: -6789963395737499476
+    second: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_2
+  - first:
+      213: 1874062876657460805
+    second: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_3
+  - first:
+      213: 8917714337026797777
+    second: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_4
+  - first:
+      213: 3057514354966419356
+    second: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_5
+  - first:
+      213: 6166254995069565226
+    second: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_6
+  - first:
+      213: 2446669377527321539
+    second: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_7
+  - first:
+      213: 2308658984766491838
+    second: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_8
+  - first:
+      213: -4006082442124819079
+    second: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_9
+  - first:
+      213: 4517272788624869921
+    second: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_10
+  - first:
+      213: 1037626572201682417
+    second: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_11
+  - first:
+      213: 4896112348004749350
+    second: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_12
+  - first:
+      213: 7298807984636467684
+    second: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_13
+  - first:
+      213: 2441647546077330668
+    second: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_14
+  - first:
+      213: -6766929157946288486
+    second: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_15
+  - first:
+      213: -8630312512090507625
+    second: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_16
+  - first:
+      213: -4939964166606071000
+    second: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_17
+  - first:
+      213: 6838799826353318828
+    second: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_18
+  - first:
+      213: 6241472823942631808
+    second: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_19
+  - first:
+      213: -8328587695720242626
+    second: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_20
+  - first:
+      213: 1087997280876173011
+    second: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_21
+  - first:
+      213: -4301415927940576997
+    second: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_22
+  - first:
+      213: -2029139321048196040
+    second: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_23
+  - first:
+      213: 3191728876756008552
+    second: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_24
+  - first:
+      213: 6492181016657547114
+    second: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_25
+  - first:
+      213: 2107389792541638387
+    second: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_26
+  - first:
+      213: 514676386347611290
+    second: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_27
+  - first:
+      213: -4667838638709871398
+    second: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_28
+  - first:
+      213: 1844277071459621728
+    second: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_29
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1023.2
+        width: 256
+        height: 255.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f957bef0fadec145be92c3aed4cdda6
+      internalID: 5517425383450095832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1023.2
+        width: 256
+        height: 255.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e09c9d2809f07640bae18e0ee5dde53
+      internalID: 1631496136568746281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1023.2
+        width: 256
+        height: 255.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a9d16c068cdf14418e05947f2ffcd93
+      internalID: -6789963395737499476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1023.2
+        width: 256
+        height: 255.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2722cc7876bf43e4790968fce7ffb42c
+      internalID: 1874062876657460805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1023.2
+        width: 256
+        height: 255.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cac5e4fdb1b145b4f857e4c2a9725ff0
+      internalID: 8917714337026797777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1023.2
+        width: 256
+        height: 255.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c398f9bc0e4ba784db5ae68d14843bd8
+      internalID: 3057514354966419356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768.2
+        width: 256
+        height: 255.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5845b8fb1d0e834097f9e09c18c257a
+      internalID: 6166254995069565226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_7
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768.2
+        width: 256
+        height: 255.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 398e7d5181fea3643a700dd5071ee552
+      internalID: 2446669377527321539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768.2
+        width: 256
+        height: 255.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e130a437e1c15424aa3faac51eec1dca
+      internalID: 2308658984766491838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_9
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768.2
+        width: 256
+        height: 255.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d968bbc35abe6d43a60a7f40f22547f
+      internalID: -4006082442124819079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_10
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 768.2
+        width: 256
+        height: 255.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5155e6bb96ac93044a4332d580023684
+      internalID: 4517272788624869921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_11
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 768.2
+        width: 256
+        height: 255.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 801bc2a529f910f468d573b5e39010f9
+      internalID: 1037626572201682417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 513.2
+        width: 256
+        height: 255.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a747c07d05b90249bd0041e32c1ce1b
+      internalID: 4896112348004749350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_13
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 513.2
+        width: 256
+        height: 255.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 519785d57f5875b468698020b03053da
+      internalID: 7298807984636467684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_14
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 513.2
+        width: 256
+        height: 255.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73d47e4e91db59248870c148f46c2e5d
+      internalID: 2441647546077330668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_15
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 513.2
+        width: 256
+        height: 255.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db0f25774adb0904982e814575a913ac
+      internalID: -6766929157946288486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_16
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 513.2
+        width: 256
+        height: 255.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2719426d8d472c4bb709bf4b05620e5
+      internalID: -8630312512090507625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_17
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 513.2
+        width: 256
+        height: 255.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 765005029021d6f41893939fc89824d5
+      internalID: -4939964166606071000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 258.2
+        width: 256
+        height: 255.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5383e5cca49cfe74ca2dc02ef66c4f49
+      internalID: 6838799826353318828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_19
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 258.2
+        width: 256
+        height: 255.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 831463018077d1d40bb6abbc7ae327cb
+      internalID: 6241472823942631808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_20
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 258.2
+        width: 256
+        height: 255.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00dbda23f1130cf4d9c28debce97c6b0
+      internalID: -8328587695720242626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_21
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 258.2
+        width: 256
+        height: 255.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcc8447c6c0a32844811db354d5c7fb5
+      internalID: 1087997280876173011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_22
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 258.2
+        width: 256
+        height: 255.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4718ff383f106c74996adb6aa33ac970
+      internalID: -4301415927940576997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_23
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 258.2
+        width: 256
+        height: 255.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28e8a7233aa17924da4dc365b0714e4d
+      internalID: -2029139321048196040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3.199997
+        width: 256
+        height: 255.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 592ffd6058cc7df4b8ebe8266ef8debd
+      internalID: 3191728876756008552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_25
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 3.199997
+        width: 256
+        height: 255.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9382c5e06cce7bc4fb109be7b88929fe
+      internalID: 6492181016657547114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_26
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 3.199997
+        width: 256
+        height: 255.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9442c79e35a45fa46845de0ba039e26d
+      internalID: 2107389792541638387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_27
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 3.199997
+        width: 256
+        height: 255.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9023f0395b3274147bbc90a73bb9ca87
+      internalID: 514676386347611290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_28
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 3.199997
+        width: 256
+        height: 255.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce04c306910be0e4ea7e2e68d7f88e29
+      internalID: -4667838638709871398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 12-128803_smoke30frames-smoke-sprite-sheet-transparent_29
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 3.199997
+        width: 256
+        height: 255.8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac8e8d4a6d80e4f4fb749479bebb6811
+      internalID: 1844277071459621728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
