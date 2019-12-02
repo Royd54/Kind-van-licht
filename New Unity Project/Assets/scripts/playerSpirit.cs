@@ -1,16 +1,19 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class playerSpirit : MonoBehaviour
 {
     [SerializeField] private GameObject igniculusLight1;
     [SerializeField] private GameObject igniculusLight2;
+    [SerializeField] private Image spiritUsageBar;
 
     public float distance = 10.0f;
     public bool useInitalCameraDistance = false;
 
     private float actualDistance;
-    private double charge = 100;
+    private double charge = 500;
+    private float maxCharge = 500;
 
     // Use this for initialization
     void Start()
@@ -36,6 +39,7 @@ public class playerSpirit : MonoBehaviour
 
         if (Input.GetMouseButton(1) && charge > 0)
         {
+            spiritUsageBar.fillAmount = (float)charge / maxCharge;
             charge -= 0.4;
             igniculusLight2.SetActive(true);
         }
@@ -57,5 +61,11 @@ public class playerSpirit : MonoBehaviour
             GameObject.FindGameObjectWithTag("enemy").GetComponent<enemyCombat>().canAttack -= 1;
             Debug.Log(GameObject.FindGameObjectWithTag("enemy").GetComponent<enemyCombat>().canAttack);
         }
+    }
+
+    public double getCharge()
+    {
+        Debug.Log(charge);
+         return charge;
     }
 }

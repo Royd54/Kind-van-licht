@@ -7,8 +7,12 @@ public class UIHandler : MonoBehaviour
 {
     [SerializeField] private Text healthText;
     [SerializeField] private Text manaText;
+    [SerializeField] private Image spiritUsageBar;
     private float playerHealth;
+    private double spiritCharge;
+    private double maxSpiritCharge;
     private int playerMana;
+
 
     // Update is called once per frame
     void Update()
@@ -18,5 +22,8 @@ public class UIHandler : MonoBehaviour
 
         playerMana = GameObject.FindGameObjectWithTag("Player").GetComponent<playerCombat>().getMana();
         manaText.text = playerMana + " / " + 7;
+
+        GameObject.FindGameObjectWithTag("spirit").GetComponent<playerSpirit>().getCharge();
+
     }
 }

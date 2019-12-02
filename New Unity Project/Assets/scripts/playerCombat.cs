@@ -38,6 +38,9 @@ public class playerCombat : MonoBehaviour
     [SerializeField] private GameObject playerLight;
     [SerializeField] private GameObject enemyLight;
 
+    [SerializeField] private GameObject slashUIbox;
+    [SerializeField] private GameObject defenceUIBox;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -125,11 +128,15 @@ public class playerCombat : MonoBehaviour
 
         yield return new WaitForSeconds(2);
         mainCamera.GetComponent<cameraAnim>().focusAttack();
+        slashUIbox.SetActive(true);
+
+        yield return new WaitForSeconds(2);
+        slashUIbox.SetActive(false);
 
         strength = Random.Range(minDmg, maxDmg);
         enemy.GetComponent<enemyCombat>().getDamage(Mathf.CeilToInt(strength));
         canAttack -= Mathf.CeilToInt(strength);
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
 
         if (enemy.GetComponent<enemyCombat>().enemyHealth >= 0)
         {
@@ -154,6 +161,10 @@ public class playerCombat : MonoBehaviour
         enemy.GetComponent<enemyCombat>().getDamage(0);
         playerMana -= 2; 
         yield return new WaitForSeconds(2);
+        defenceUIBox.SetActive(true);
+
+        yield return new WaitForSeconds(2);
+        defenceUIBox.SetActive(false);
 
         if (enemy.GetComponent<enemyCombat>().enemyHealth >= 0)
         {
