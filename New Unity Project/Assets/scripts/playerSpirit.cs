@@ -10,6 +10,7 @@ public class playerSpirit : MonoBehaviour
     public bool useInitalCameraDistance = false;
 
     private float actualDistance;
+    private double charge = 100;
 
     // Use this for initialization
     void Start()
@@ -33,7 +34,9 @@ public class playerSpirit : MonoBehaviour
         mousePosition.z = 22;
         transform.position = Camera.main.ScreenToWorldPoint(mousePosition);
 
-        if (Input.GetMouseButton(1)){
+        if (Input.GetMouseButton(1) && charge > 0)
+        {
+            charge -= 0.4;
             igniculusLight2.SetActive(true);
         }
         else
@@ -42,13 +45,17 @@ public class playerSpirit : MonoBehaviour
         }
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.tag);
-        if (Input.GetMouseButton(1) && collision.gameObject.tag == "plant")
+        if (Input.GetMouseButton(1) && collision.gameObject.tag == "plant" && charge > 0)
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<playerCombat>().addRecourses(Random.Range(2, 5), Random.Range(1, 3));
         }
-    }
 
+        if (Input.GetMouseButton(1) && collision.gameObject.tag == "enemy" && charge > 0)
+        {
+            GameObject.FindGameObjectWithTag("enemy").GetComponent<enemyCombat>().canAttack -= 1;
+            Debug.Log(GameObject.FindGameObjectWithTag("enemy").GetComponent<enemyCombat>().canAttack);
+        }
+    }
 }

@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class playerCombat : MonoBehaviour
 {
+    private float maxPlayerHealth = 20;
+    private int maxPlayerMana = 7;
+
     private float playerHealth;
     private static float playerXP;
     private int playerMana;
@@ -149,6 +152,7 @@ public class playerCombat : MonoBehaviour
         mainLight.SetActive(true);
 
         enemy.GetComponent<enemyCombat>().getDamage(0);
+        playerMana -= 2; 
         yield return new WaitForSeconds(2);
 
         if (enemy.GetComponent<enemyCombat>().enemyHealth >= 0)
@@ -224,7 +228,7 @@ public class playerCombat : MonoBehaviour
 
     public void addRecourses(float healthPoints, int mana)
     {
-        if (playerHealth < 20)
+        if (playerHealth < maxPlayerHealth)
         {
             playerHealth += healthPoints;
             Debug.Log("playerHealthRecieved: " + healthPoints);
@@ -232,13 +236,23 @@ public class playerCombat : MonoBehaviour
         }
         else { playerHealth = 20; }
 
-        if (playerMana < 7)
+        if (playerMana < maxPlayerMana)
         {
             playerMana += mana;
             Debug.Log("manaRevieved: " + mana);
             Debug.Log("totalPlayerMana: " + playerMana);
         }
         else { playerMana = 7; }
+    }
+
+    public float getHealth()
+    {
+        return playerHealth;
+    }
+
+    public int getMana()
+    {
+        return playerMana;
     }
 
 }
