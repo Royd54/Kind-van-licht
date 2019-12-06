@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class enemyCombat : MonoBehaviour
@@ -7,6 +8,8 @@ public class enemyCombat : MonoBehaviour
     public float enemyHealth = 50f;
     public float canAttack;
     private float strength;
+    [SerializeField] private GameObject enemySlider;
+    [SerializeField] private float curentUIpos;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,12 +19,19 @@ public class enemyCombat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //updates the position of the attack UI knob
+        curentUIpos = enemySlider.GetComponent<Slider>().value;
+        enemySlider.GetComponent<Slider>().value = Mathf.Lerp(curentUIpos, canAttack, Time.deltaTime * 10);
+        //enemySlider.GetComponent<Slider>().value = Mathf.MoveTowards(enemySlider.GetComponent<Slider>().value, canAttack, 100.0f);
+
+        //if the enemy is dead the player XP is added
         if (enemyHealth <= 0)
         {
-            GameObject.Find(contstantsClass.player).GetComponent<playerCombat>().addXP(10);
-            Destroy(this.gameObject);
+            GameObject.Find(contstantsClass.player).GetComponent<playerCombat>().addXP();
+            this.gameObject.SetActive(false);
         }
 
+        //if the enemy can attack it deals damage to the player
         if (canAttack >= 100 && GameObject.Find(contstantsClass.player).GetComponent<playerCombat>().attacking == false)
         {
             strength = Random.Range(1, 7);
@@ -38,9 +48,10 @@ public class enemyCombat : MonoBehaviour
         }
     }
 
+    //getter for the damage taken by the player and adds canAttack, so it can attack faster
     public void getDamage(float damage){
         enemyHealth -= damage;
         Debug.Log("enemyHealth: " + enemyHealth);
-        canAttack += 30;
+        canAttack += 40;
     }
 }

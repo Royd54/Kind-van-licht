@@ -18,6 +18,7 @@ public class playerSpirit : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        //calculates distance between cam and object
         if (useInitalCameraDistance)
         {
             Vector3 toObjectVector = transform.position - Camera.main.transform.position;
@@ -33,10 +34,12 @@ public class playerSpirit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //places opject on the correct z acces and makes the object follow the mouse
         Vector3 mousePosition = Input.mousePosition;
         mousePosition.z = 22;
         transform.position = Camera.main.ScreenToWorldPoint(mousePosition);
 
+        //checks if the charge is high enough to use powers
         if (Input.GetMouseButton(1) && charge > 0)
         {
             spiritUsageBar.fillAmount = (float)charge / maxCharge;
@@ -49,6 +52,7 @@ public class playerSpirit : MonoBehaviour
         }
     }
 
+    //if the object triggers an collision and uses powers within a flower, hp and mana is added to the player
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (Input.GetMouseButton(1) && collision.gameObject.tag == "plant" && charge > 0)
@@ -63,6 +67,7 @@ public class playerSpirit : MonoBehaviour
         }
     }
 
+    //returns the charge variable
     public double getCharge()
     {
         Debug.Log(charge);

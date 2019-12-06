@@ -10,7 +10,7 @@ public class cameraAnim : MonoBehaviour
 
     void Update()
     {
-
+        //debugs
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             currentView = views[0];
@@ -31,7 +31,6 @@ public class cameraAnim : MonoBehaviour
 
     void LateUpdate()
     {
-
         //Lerp position
         transform.position = Vector3.Lerp(transform.position, currentView.position, Time.deltaTime * transitionSpeed);
 
@@ -44,6 +43,7 @@ public class cameraAnim : MonoBehaviour
 
     }
 
+    //these fucntions set the current view to lerp to
     public void focusPlayer()
     {
         currentView = views[0];

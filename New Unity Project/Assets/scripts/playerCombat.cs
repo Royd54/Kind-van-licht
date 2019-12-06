@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.Experimental.Rendering.LWRP;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class playerCombat : MonoBehaviour
@@ -10,12 +11,12 @@ public class playerCombat : MonoBehaviour
     private int maxPlayerMana = 7;
 
     private float playerHealth;
-    private static float playerXP;
+    private float playerXP;
     private int playerMana;
     private float canAttack;
     private int attackType; // 1 = slash 2 = defend 3 = lightray
-    private float minDmg = 5f;
-    private float maxDmg = 25f;
+    private float minDmg = 50f;
+    private float maxDmg = 50f;
     private float strength;
     private float interruptValue;
 
@@ -25,6 +26,7 @@ public class playerCombat : MonoBehaviour
     public bool isChoosingAttack;
     public bool attacking = false;
     public bool blocking = false;
+    public bool won = false;
 
     private int enemyCount;
     private int enemyIndex;
@@ -40,6 +42,14 @@ public class playerCombat : MonoBehaviour
 
     [SerializeField] private GameObject slashUIbox;
     [SerializeField] private GameObject defenceUIBox;
+    [SerializeField] private GameObject XPbar;
+    [SerializeField] private Image XPbarFill;
+    private double charge = 0;
+    private float maxCharge = 500;
+
+    [SerializeField] private GameObject playerSlider;
+    [SerializeField] private float curentUIpos;
+
 
     // Start is called before the first frame update
     void Start()
@@ -56,23 +66,35 @@ public class playerCombat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //updates the attack slider knob
+        curentUIpos = playerSlider.GetComponent<Slider>().value;
+        playerSlider.GetComponent<Slider>().value = Mathf.Lerp(curentUIpos, canAttack, Time.deltaTime * 10);
+
         mainLight.SetActive(true);
         if (enemyIndex <= 0)
         {
             enemyIndex = enemyCount;
         }
 
-        if(canAttack >= 85 && GameObject.Find("Enemy").GetComponent<enemyCombat>().canAttack < 100)
+        //adds xp if the player has won
+        if(won == true)
         {
+            addXP();
+        }
 
-            if (isChoosingAttack == true)
+        //if the player can attack, the player is able to choose a attack type and attack
+        if(canAttack >= 85  && won == false)
+        {
+            //if the enemy can't attack asweel then the player is able to attack
+            if (isChoosingAttack == true && GameObject.Find("Enemy").GetComponent<enemyCombat>().canAttack < 100)
             {
                 chooseAttack();
             }
-            else if (isChoosingAttack == false && attacking == false)
+            else if (isChoosingAttack == false && attacking == false) 
             {
                 playerLight.SetActive(false);
                 dimMainLight.SetActive(true);
+                GetComponentInChildren<colorChanger>().changePlayerColor();
                 enemyLight.SetActive(true);
                 mainLight.SetActive(false);
 
@@ -80,7 +102,8 @@ public class playerCombat : MonoBehaviour
                 slashButton.SetActive(false);
                 lightrayButton.SetActive(false);
 
-                if (Input.GetKeyDown(KeyCode.K))
+                //if the player has choosen the attack type via the ui buttons the player can attack with the K button
+                if (Input.GetKeyDown(KeyCode.K)) 
                 {
                     chosenEnemy = enemys[enemyIndex - 1];
                     Debug.Log(enemyIndex);
@@ -99,7 +122,7 @@ public class playerCombat : MonoBehaviour
 
                     }
                 }
-
+                //cycles through the enemy array
                 if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
                     enemyIndex--;
@@ -108,7 +131,7 @@ public class playerCombat : MonoBehaviour
                 }
             }
         }
-        else
+        else // if the player can't attack yet the player needs to wait
         {
             StartCoroutine(canAttackCooldown());
         }
@@ -125,6 +148,7 @@ public class playerCombat : MonoBehaviour
         dimMainLight.SetActive(false);
         enemyLight.SetActive(false);
         mainLight.SetActive(true);
+        GetComponentInChildren<colorChanger>().changePlayerColorMiddle();
 
         yield return new WaitForSeconds(2);
         mainCamera.GetComponent<cameraAnim>().focusAttack();
@@ -133,11 +157,13 @@ public class playerCombat : MonoBehaviour
         yield return new WaitForSeconds(2);
         slashUIbox.SetActive(false);
 
+        //deals ROUNDED damage to the enemy
         strength = Random.Range(minDmg, maxDmg);
         enemy.GetComponent<enemyCombat>().getDamage(Mathf.CeilToInt(strength));
         canAttack -= Mathf.CeilToInt(strength);
         yield return new WaitForSeconds(2);
 
+        
         if (enemy.GetComponent<enemyCombat>().enemyHealth >= 0)
         {
             mainCamera.GetComponent<cameraAnim>().focusRestore();
@@ -157,6 +183,7 @@ public class playerCombat : MonoBehaviour
         dimMainLight.SetActive(false);
         enemyLight.SetActive(false);
         mainLight.SetActive(true);
+        GetComponentInChildren<colorChanger>().changePlayerColorMiddle();
 
         enemy.GetComponent<enemyCombat>().getDamage(0);
         playerMana -= 2; 
@@ -182,7 +209,9 @@ public class playerCombat : MonoBehaviour
         dimMainLight.SetActive(false);
         enemyLight.SetActive(false);
         mainLight.SetActive(true);
+        GetComponentInChildren<colorChanger>().changePlayerColorMiddle();
 
+        //adds float until the player can attack again
         yield return new WaitForSeconds(1);
         if(canAttack >= 100)
         {
@@ -194,14 +223,17 @@ public class playerCombat : MonoBehaviour
         }
     }
 
+    //attack setter used by the buttons
     public void attackValue(int type)
     {
         isChoosingAttack = false;
         attackType = type;
     }
 
+    //handles light animations
     public void chooseAttack()
     {
+        GetComponentInChildren<colorChanger>().changePlayerColorBack();
         playerLight.SetActive(true);
         dimMainLight.SetActive(true);
         enemyLight.SetActive(false);
@@ -212,6 +244,7 @@ public class playerCombat : MonoBehaviour
         lightrayButton.SetActive(true);
     }
 
+    //the player recieves damage equal to the damage parameter
     public void recieveDamage(float damage)
     {
         if(playerHealth > 0)
@@ -227,16 +260,19 @@ public class playerCombat : MonoBehaviour
         }
     }
 
-    public void addXP(float xp)
+    //adds XP and starts the XP animations
+    public void addXP()
     {
-        playerXP += xp;
+        won = true;
         //xp animatie hiero + camera en ui animatie
         mainCamera.GetComponent<cameraAnim>().focusXpEarned();
         strength = Random.Range(25, 75);
         canAttack -= Mathf.CeilToInt(interruptValue);
-        Debug.Log("playerxp: " + playerXP);
+        XPbar.SetActive(true);
+        XPbarFill.fillAmount = Mathf.Lerp(XPbarFill.fillAmount, 0.5f, Time.deltaTime * 6);
     }
 
+    //adds the resources if the spirit uses the flowers
     public void addRecourses(float healthPoints, int mana)
     {
         if (playerHealth < maxPlayerHealth)

@@ -17,6 +17,7 @@ public class UIHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //sets the ui elements to the correct values
         playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<playerCombat>().getHealth();
         healthText.text = playerHealth + " / " + 20;
 
