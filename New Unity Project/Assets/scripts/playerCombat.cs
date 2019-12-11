@@ -15,8 +15,8 @@ public class playerCombat : MonoBehaviour
     private int playerMana;
     private float canAttack;
     private int attackType; // 1 = slash 2 = defend 3 = lightray
-    private float minDmg = 50f;
-    private float maxDmg = 50f;
+    private float minDmg = 0f;
+    private float maxDmg = 15f;
     private float strength;
     private float interruptValue;
 
@@ -25,6 +25,7 @@ public class playerCombat : MonoBehaviour
     [SerializeField] private GameObject lightrayButton;
     public bool isChoosingAttack;
     public bool attacking = false;
+    public bool choosingAttack = false;
     public bool blocking = false;
     public bool won = false;
 
@@ -54,9 +55,9 @@ public class playerCombat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerHealth = 20f;
+        playerHealth = 40f;
         playerMana = 7;
-        canAttack = 100f;
+        canAttack = 70f;
         enemyCount = enemys.Length;
         enemyIndex = 0;
         isChoosingAttack = true;
@@ -70,6 +71,15 @@ public class playerCombat : MonoBehaviour
         curentUIpos = playerSlider.GetComponent<Slider>().value;
         playerSlider.GetComponent<Slider>().value = Mathf.Lerp(curentUIpos, canAttack, Time.deltaTime * 10);
 
+        if (canAttack >= 100)
+        {
+            canAttack = 100;
+        }
+        else
+        {
+            canAttack += 0.1f;
+        }
+
         mainLight.SetActive(true);
         if (enemyIndex <= 0)
         {
@@ -82,9 +92,15 @@ public class playerCombat : MonoBehaviour
             addXP();
         }
 
-        //if the player can attack, the player is able to choose a attack type and attack
-        if(canAttack >= 85  && won == false)
+        if (canAttack == 85)
         {
+            StartCoroutine(wait());
+        }
+
+            //if the player can attack, the player is able to choose a attack type and attack
+            if (curentUIpos >= 90  && won == false)
+            {
+            
             //if the enemy can't attack asweel then the player is able to attack
             if (isChoosingAttack == true && GameObject.Find("Enemy").GetComponent<enemyCombat>().canAttack < 100)
             {
@@ -105,6 +121,7 @@ public class playerCombat : MonoBehaviour
                 //if the player has choosen the attack type via the ui buttons the player can attack with the K button
                 if (Input.GetKeyDown(KeyCode.K)) 
                 {
+                    choosingAttack = false;
                     chosenEnemy = enemys[enemyIndex - 1];
                     Debug.Log(enemyIndex);
                     if (attackType == 1)
@@ -140,7 +157,7 @@ public class playerCombat : MonoBehaviour
 
     private IEnumerator Slash(GameObject enemy)
     {
-        //deals damage and does the attack animations
+        //deals damage and does the attack animations 
         mainCamera.GetComponent<cameraAnim>().enabled = true;
         mainCamera.GetComponent<cameraAnim>().focusPlayer();
         attacking = true;
@@ -151,19 +168,21 @@ public class playerCombat : MonoBehaviour
         GetComponentInChildren<colorChanger>().changePlayerColorMiddle();
 
         yield return new WaitForSeconds(2);
+        GameObject.Find("baked_idle_test_2").GetComponent<Animator>().SetBool("IsAttacking", true);
         mainCamera.GetComponent<cameraAnim>().focusAttack();
         slashUIbox.SetActive(true);
 
         yield return new WaitForSeconds(2);
         slashUIbox.SetActive(false);
-
+        GameObject.Find("baked_idle_test_2").GetComponent<Animator>().SetBool("IsAttacking", false);
         //deals ROUNDED damage to the enemy
         strength = Random.Range(minDmg, maxDmg);
         enemy.GetComponent<enemyCombat>().getDamage(Mathf.CeilToInt(strength));
-        canAttack -= Mathf.CeilToInt(strength);
+        canAttack -= 20f;
         yield return new WaitForSeconds(2);
-
         
+
+
         if (enemy.GetComponent<enemyCombat>().enemyHealth >= 0)
         {
             mainCamera.GetComponent<cameraAnim>().focusRestore();
@@ -213,14 +232,13 @@ public class playerCombat : MonoBehaviour
 
         //adds float until the player can attack again
         yield return new WaitForSeconds(1);
-        if(canAttack >= 100)
-        {
-            canAttack = 100;
-        }
-        else
-        {
-            canAttack += 35;
-        }
+
+    }
+
+    private IEnumerator wait()
+    {
+        curentUIpos = playerSlider.GetComponent<Slider>().value = 85;
+        yield return new WaitForSeconds(1);
     }
 
     //attack setter used by the buttons
@@ -242,15 +260,17 @@ public class playerCombat : MonoBehaviour
         defendButton.SetActive(true);
         slashButton.SetActive(true);
         lightrayButton.SetActive(true);
+        choosingAttack = true;
     }
 
-    //the player recieves damage equal to the damage parameter
-    public void recieveDamage(float damage)
+    public IEnumerator recieveDamage(float damage)
     {
-        if(playerHealth > 0)
+        GameObject.Find("baked_idle_test_2").GetComponent<Animator>().SetBool("IsHit", true);
+        if (playerHealth > 0)
         {
             blocking = false;
             playerHealth -= damage;
+            choosingAttack = true;
             mainCamera.GetComponent<cameraAnim>().focusPlayer();
             Debug.Log("playerHealth: " + playerHealth);
         }
@@ -258,6 +278,16 @@ public class playerCombat : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+
+        if (damage > 3)
+        {
+            canAttack -= 50f;
+        }
+
+        yield return new WaitForSeconds(2);
+
+        GameObject.Find("baked_idle_test_2").GetComponent<Animator>().SetBool("IsHit", false);
+        GameObject.Find("Enemy").GetComponent<Animator>().SetBool("IsAttacking", false);
     }
 
     //adds XP and starts the XP animations
@@ -265,11 +295,12 @@ public class playerCombat : MonoBehaviour
     {
         won = true;
         //xp animatie hiero + camera en ui animatie
+        GameObject.Find("baked_idle_test_2").GetComponent<Animator>().SetBool("HasWon", true);
         mainCamera.GetComponent<cameraAnim>().focusXpEarned();
         strength = Random.Range(25, 75);
         canAttack -= Mathf.CeilToInt(interruptValue);
         XPbar.SetActive(true);
-        XPbarFill.fillAmount = Mathf.Lerp(XPbarFill.fillAmount, 0.5f, Time.deltaTime * 6);
+        XPbarFill.fillAmount = Mathf.Lerp(XPbarFill.fillAmount, 0.5f, Time.deltaTime * 12);
     }
 
     //adds the resources if the spirit uses the flowers

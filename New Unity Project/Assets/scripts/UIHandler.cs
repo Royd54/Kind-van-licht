@@ -19,7 +19,7 @@ public class UIHandler : MonoBehaviour
     {
         //sets the ui elements to the correct values
         playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<playerCombat>().getHealth();
-        healthText.text = playerHealth + " / " + 20;
+        healthText.text = playerHealth + " / " + 40;
 
         playerMana = GameObject.FindGameObjectWithTag("Player").GetComponent<playerCombat>().getMana();
         manaText.text = playerMana + " / " + 7;

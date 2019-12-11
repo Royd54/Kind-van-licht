@@ -11,21 +11,33 @@ public class colorChanger : MonoBehaviour
     public Material swordUnlit;
     public Material swordLit;
 
+
+    private void Start()
+    {
+        GameObject.Find("Sword").GetComponent<MeshRenderer>().material = swordLit;
+    }
     public void changePlayerColor()
     {
-        GetComponent<MeshRenderer>().material = playerUnlit;
-        GameObject.Find("sword").GetComponent<MeshRenderer>().material = swordUnlit;
+        GetComponent<SkinnedMeshRenderer>().material = playerUnlit;
+        GameObject.Find("Crown").GetComponent<MeshRenderer>().material = playerUnlit;
+        GameObject.Find("Dress").GetComponent<SkinnedMeshRenderer>().material = playerUnlit;
+        GameObject.Find("Sword").GetComponent<MeshRenderer>().material = swordUnlit;
     }
 
     public void changePlayerColorBack()
     {
-        GetComponent<MeshRenderer>().material = playerLit;
-        GameObject.Find("sword").GetComponent<MeshRenderer>().material = swordLit;
+        GetComponent<SkinnedMeshRenderer>().material = playerLit;
+        GameObject.Find("Sword").GetComponent<MeshRenderer>().material = swordLit;
+        GameObject.Find("Dress").GetComponent<SkinnedMeshRenderer>().material = playerLit;
+        GameObject.Find("Crown").GetComponent<MeshRenderer>().material = playerLit;
     }
 
     public void changePlayerColorMiddle()
     {
-        GetComponent<MeshRenderer>().material = playerLit;
-        GetComponent<MeshRenderer>().material = playerMiddle;
+        GetComponent<SkinnedMeshRenderer>().material = playerLit;
+        GameObject.Find("Sword").GetComponent<MeshRenderer>().material = swordLit;
+        GameObject.Find("Dress").GetComponent<SkinnedMeshRenderer>().material = playerMiddle;
+        GameObject.Find("Crown").GetComponent<MeshRenderer>().material = playerMiddle;
+        GetComponent<SkinnedMeshRenderer>().material = playerMiddle;
     }
 }

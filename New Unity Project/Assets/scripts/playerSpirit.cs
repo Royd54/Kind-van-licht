@@ -64,6 +64,11 @@ public class playerSpirit : MonoBehaviour
         {
             GameObject.FindGameObjectWithTag("enemy").GetComponent<enemyCombat>().canAttack -= 1;
             Debug.Log(GameObject.FindGameObjectWithTag("enemy").GetComponent<enemyCombat>().canAttack);
+            GameObject.FindGameObjectWithTag("enemy").GetComponent<Animator>().SetBool("IsStunned", true);
+        }
+        else
+        {
+            GameObject.FindGameObjectWithTag("enemy").GetComponent<Animator>().SetBool("IsStunned", false);
         }
     }
 
