@@ -5,11 +5,18 @@ using UnityEngine;
 
 public class enemyCombat : MonoBehaviour
 {
+
+    public AudioManager AudioManager;
+    public GameObject DamageNumbers;
+
     public float enemyHealth = 50f;
     public float canAttack;
     private float strength;
     [SerializeField] private GameObject enemySlider;
     [SerializeField] private float curentUIpos;
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +34,17 @@ public class enemyCombat : MonoBehaviour
         //if the enemy is dead the player XP is added
         if (enemyHealth <= 0)
         {
-            GameObject.Find(contstantsClass.player).GetComponent<playerCombat>().addXP();
-            this.gameObject.SetActive(false);
+
+           GameObject.Find(contstantsClass.player).GetComponent<playerCombat>().addXP();
+           this.gameObject.SetActive(false);
+
+            AudioManager.FXAudio(3);
+
+            if (DamageNumbers != null)
+            {
+                //Set damage number active.
+                DamageNumbers.SetActive(true);
+            }
         }
 
         //if the enemy can attack it deals damage to the player
@@ -46,6 +62,7 @@ public class enemyCombat : MonoBehaviour
             canAttack -= 50;
             GameObject.Find(contstantsClass.player).GetComponent<playerCombat>().recieveDamage(Mathf.CeilToInt(strength));
         }
+   
     }
 
     //getter for the damage taken by the player and adds canAttack, so it can attack faster

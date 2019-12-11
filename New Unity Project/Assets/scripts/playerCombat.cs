@@ -50,6 +50,9 @@ public class playerCombat : MonoBehaviour
     [SerializeField] private GameObject playerSlider;
     [SerializeField] private float curentUIpos;
 
+    public AudioManager AudioManager;
+    public GameObject Numbers;
+
 
     // Start is called before the first frame update
     void Start()
@@ -79,7 +82,7 @@ public class playerCombat : MonoBehaviour
         //adds xp if the player has won
         if(won == true)
         {
-            addXP();
+            addXP(); 
         }
 
         //if the player can attack, the player is able to choose a attack type and attack
@@ -111,20 +114,28 @@ public class playerCombat : MonoBehaviour
                     {
                         isChoosingAttack = false;
                         StartCoroutine(Slash(chosenEnemy));
+
+                        //Play Audio
+                        AudioManager.FXAudio(0);
+
                     }
                     else if (attackType == 2)
                     {
                         isChoosingAttack = false;
                         StartCoroutine(Block(chosenEnemy));
+                        AudioManager.FXAudio(2);
                     }
                     else
                     {
 
                     }
+
+
                 }
                 //cycles through the enemy array
                 if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
+                    AudioManager.FXAudio(6);
                     enemyIndex--;
                     chosenEnemy = enemys[enemyIndex];
                     Debug.Log(enemys[enemyIndex]);
@@ -163,7 +174,7 @@ public class playerCombat : MonoBehaviour
         canAttack -= Mathf.CeilToInt(strength);
         yield return new WaitForSeconds(2);
 
-        
+
         if (enemy.GetComponent<enemyCombat>().enemyHealth >= 0)
         {
             mainCamera.GetComponent<cameraAnim>().focusRestore();
@@ -172,11 +183,11 @@ public class playerCombat : MonoBehaviour
             isChoosingAttack = true;
             attacking = false;
         }
-        
     }
 
     private IEnumerator Block(GameObject enemy)
     {
+        
         attacking = true;
         blocking = true;
         playerLight.SetActive(false);
