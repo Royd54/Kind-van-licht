@@ -179,7 +179,7 @@ public class playerCombat : MonoBehaviour
         strength = Random.Range(minDmg, maxDmg);
         enemy.GetComponent<enemyCombat>().getDamage(Mathf.CeilToInt(strength));
         canAttack -= 20f;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         
 
 

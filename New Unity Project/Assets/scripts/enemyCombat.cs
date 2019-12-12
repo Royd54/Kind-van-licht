@@ -9,6 +9,8 @@ public class enemyCombat : MonoBehaviour
     public float canAttack;
     private float strength;
     [SerializeField] private GameObject enemySlider;
+    [SerializeField] private GameObject DamageText;
+
     [SerializeField] private float curentUIpos;
     [SerializeField] private Animator frontLegAnim;
     [SerializeField] private Animator backLegAnim;
@@ -18,7 +20,7 @@ public class enemyCombat : MonoBehaviour
     void Start()
     {
         canAttack = 50f;
-        enemyHealth = 20f;
+        enemyHealth = 1f;
     }
 
     // Update is called once per frame
@@ -56,12 +58,12 @@ public class enemyCombat : MonoBehaviour
         //enemySlider.GetComponent<Slider>().value = Mathf.MoveTowards(enemySlider.GetComponent<Slider>().value, canAttack, 100.0f);
 
         //if the enemy is dead the player XP is added
-        if (enemyHealth <= 0)
+/*        if (enemyHealth <= 0)
         {
             GameObject.Find(contstantsClass.player).GetComponent<playerCombat>().addXP();
             GetComponent<Animator>().SetBool("IsDead", true);
-            Destroy(this.gameObject,3f);
-        }
+            Destroy(this.gameObject, 3f);
+        }*/
 
         //if the enemy can attack it deals damage to the player
         if (canAttack >= 80 && GameObject.Find(contstantsClass.player).GetComponent<playerCombat>().attacking == false && GameObject.Find(contstantsClass.player).GetComponent<playerCombat>().choosingAttack == false)
@@ -108,11 +110,24 @@ public class enemyCombat : MonoBehaviour
 
     //getter for the damage taken by the player and adds canAttack, so it can attack faster
     public void getDamage(float damage){
+        StartCoroutine(floatingNumber());
         enemyHealth -= damage;
         Debug.Log("enemyHealth: " + enemyHealth);
         if (damage > 7)
         {
             canAttack -= 50f;
         }
+
+
+    }
+
+
+    private IEnumerator floatingNumber()
+    {
+        DamageText.SetActive(true);
+        GetComponent<Animator>().SetBool("IsDead", true);
+        yield return new WaitForSeconds(3);
+        Destroy(this.gameObject);
+        GameObject.Find(contstantsClass.player).GetComponent<playerCombat>().addXP();
     }
 }
